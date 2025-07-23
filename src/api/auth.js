@@ -3,7 +3,11 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 export async function registerUser(userData) {
   const res = await fetch(`${backendURL}/api/auth/register`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+  'ngrok-skip-browser-warning': 'true',
+  'Content-Type': 'application/json'
+}
+,
     body: JSON.stringify(userData),
   });
   console.log(res)
@@ -14,7 +18,11 @@ export async function registerUser(userData) {
 export async function loginUser(credentials) {
   const res = await fetch(`${backendURL}/api/auth/login`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+  'ngrok-skip-browser-warning': 'true',
+  'Content-Type': 'application/json'
+}
+,
     body: JSON.stringify(credentials)
   });
 

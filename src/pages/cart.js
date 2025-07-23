@@ -184,7 +184,11 @@ document.getElementById('placeOrderBtn')?.addEventListener('click', async () => 
 
   const response = await fetch(`${backendURL}/api/orders`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+  'ngrok-skip-browser-warning': 'true',
+  'Content-Type': 'application/json'
+}
+,
     body: JSON.stringify({
       userId: userId,
       items: cart,
